@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0H6ZT1QZWB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0H6ZT1QZWB');
+</script>
+<title>What We're Exploring — Bombay Investors Club</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='80' fill='%231F2D27'/%3E%3Cg stroke='%23F2F0EA' stroke-width='14' fill='none' transform='translate(256,200)'%3E%3Cpath d='M-95-40A120 120 0 0 0-95 110'/%3E%3Cpath d='M95-40A120 120 0 0 1 95 110'/%3E%3Cline x1='0' y1='-140' x2='0' y2='20'/%3E%3Cline x1='-15' y1='40' x2='-15' y2='180'/%3E%3C/g%3E%3C/svg%3E">
+<meta name="description" content="A preview of the themes shaping upcoming conversations at Bombay Investors Club.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.bombayinvestorsclub.in/exploring">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --forest: #1F2D27;
+  --slate: #4B5B55;
+  --stone: #F2F0EA;
+  --soft-grey: #D9D7D0;
+  --charcoal: #242826;
+  --brass: #A89167;
+  --brass-light: #C4AE8A;
+  --dark-surface: #171F1C;
+  --mid-surface: #1D2921;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--dark-surface);
+  color: var(--stone);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: none;
+}
+@media (pointer: coarse) { body { cursor: auto; } }
+h1,h2,h3,h4 { font-family: 'Playfair Display', serif; font-weight: 400; }
+
+/* Grain */
+body::before {
+  content: ''; position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.25; pointer-events: none; z-index: 1;
+}
+
+/* Cursor */
+#cursor { position: fixed; width: 10px; height: 10px; background: var(--brass); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width 0.3s, height 0.3s, background 0.3s; }
+#cursor-ring { position: fixed; width: 38px; height: 38px; border: 1px solid rgba(168,145,103,0.45); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width 0.35s, height 0.35s, border-color 0.3s; }
+@media (pointer: coarse) { #cursor, #cursor-ring { display: none; } }
+
+/* Progress */
+#progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--brass); z-index: 200; width: 0%; transition: width 0.06s linear; }
+
+a, button { cursor: none; }
+@media (pointer: coarse) { a, button { cursor: pointer; } }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 clamp(24px,5vw,80px); height: 72px; display: flex; align-items: center; justify-content: space-between; transition: background 0.4s, box-shadow 0.4s; }
+nav.scrolled { background: rgba(23,31,28,0.92); backdrop-filter: blur(12px); border-bottom: 0.5px solid rgba(168,145,103,0.15); box-shadow: 0 2px 40px rgba(0,0,0,0.2); }
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo svg { height: 38px; width: 38px; }
+.nav-logo-text { font-family: 'Playfair Display', serif; font-size: 15px; letter-spacing: 0.06em; color: var(--stone); font-weight: 500; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(242,240,234,0.5); text-decoration: none; font-weight: 400; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--brass); }
+.nav-mobile { display: none; flex-direction: column; gap: 5px; }
+.nav-mobile span { display: block; width: 22px; height: 1.5px; background: var(--stone); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 clamp(24px,8vw,120px) clamp(60px,7vw,100px);
+  position: relative; z-index: 2; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: var(--dark-surface);
+  overflow: hidden;
+}
+.hero-bg-line {
+  position: absolute;
+  width: 1px; background: rgba(168,145,103,0.08);
+  top: 0; bottom: 0;
+  transform-origin: top center;
+}
+.hero-bg-circle {
+  position: absolute; border-radius: 50%;
+  border: 1px solid rgba(168,145,103,0.06);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  animation: breathe 8s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%,-50%) scale(1.04); opacity: 1; }
+}
+.hero-eyebrow {
+  font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+  font-weight: 500; color: var(--brass); margin-bottom: 28px;
+  position: relative; z-index: 2;
+  opacity: 0; animation: fadeUp 1s ease 0.3s forwards;
+  display: flex; align-items: center; gap: 16px;
+}
+.hero-eyebrow::before {
+  content: ''; display: block; width: 40px; height: 1px; background: var(--brass); opacity: 0.5;
+}
+.hero-title {
+  font-size: clamp(44px,7vw,96px); line-height: 1.02;
+  color: var(--stone); font-weight: 400;
+  max-width: 900px; position: relative; z-index: 2;
+  opacity: 0; animation: fadeUp 1s ease 0.45s forwards;
+}
+.hero-title em { font-style: italic; color: var(--brass); }
+.hero-sub {
+  margin-top: 32px;
+  font-size: clamp(14px,1.2vw,16px); line-height: 1.75;
+  color: rgba(242,240,234,0.38);
+  max-width: 460px; position: relative; z-index: 2;
+  opacity: 0; animation: fadeUp 1s ease 0.6s forwards;
+}
+.hero-count {
+  position: absolute; right: clamp(24px,8vw,120px); bottom: clamp(60px,7vw,100px);
+  z-index: 2; text-align: right;
+  opacity: 0; animation: fadeUp 1s ease 0.75s forwards;
+}
+.hero-count-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(64px,8vw,120px); line-height: 1;
+  color: rgba(168,145,103,0.12); font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.hero-count-label {
+  font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(168,145,103,0.3); margin-top: 4px;
+}
+
+/* THEMES SECTION */
+.themes-section {
+  padding: 0 clamp(24px,8vw,120px) clamp(80px,10vw,140px);
+  position: relative; z-index: 2;
+}
+
+/* CARD */
+.theme-card {
+  border-top: 1px solid rgba(168,145,103,0.12);
+  position: relative; overflow: hidden;
+}
+.theme-card:last-child { border-bottom: 1px solid rgba(168,145,103,0.12); }
+
+.theme-card-inner {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 0 32px;
+  padding: clamp(36px,4vw,56px) 0;
+  align-items: start;
+  cursor: pointer;
+  position: relative; z-index: 2;
+  transition: padding 0.5s ease;
+}
+
+/* Hover fill */
+.theme-card::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 1;
+  background: var(--mid-surface);
+  transform: scaleY(0); transform-origin: bottom;
+  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.theme-card:hover::before,
+.theme-card.open::before { transform: scaleY(1); }
+
+.theme-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px; color: var(--brass);
+  letter-spacing: 0.12em; opacity: 0.45;
+  padding-top: 8px; user-select: none;
+  transition: opacity 0.3s;
+}
+.theme-card:hover .theme-num,
+.theme-card.open .theme-num { opacity: 1; }
+
+.theme-main { min-width: 0; }
+.theme-tag {
+  display: inline-block;
+  font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(168,145,103,0.6); font-weight: 500;
+  margin-bottom: 14px;
+  transition: color 0.3s;
+}
+.theme-card:hover .theme-tag,
+.theme-card.open .theme-tag { color: var(--brass); }
+
+.theme-title {
+  font-size: clamp(20px,2.2vw,30px);
+  color: var(--stone); line-height: 1.2;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+.theme-card:hover .theme-title { color: var(--stone); }
+
+/* Expand body */
+.theme-expand {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.55s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease;
+  opacity: 0;
+  position: relative; z-index: 2;
+}
+.theme-card.open .theme-expand { max-height: 240px; opacity: 1; }
+.theme-expand-inner {
+  padding: 4px 0 clamp(24px,3vw,40px);
+  padding-left: calc(100px + 32px);
+}
+.theme-expand-inner p {
+  font-size: 15px; line-height: 1.85;
+  color: rgba(242,240,234,0.5);
+  max-width: 680px;
+}
+
+/* Arrow icon */
+.theme-arrow {
+  width: 44px; height: 44px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(168,145,103,0.18); border-radius: 50%;
+  margin-top: 4px;
+  transition: border-color 0.3s, background 0.3s, transform 0.45s cubic-bezier(0.16,1,0.3,1);
+}
+.theme-arrow svg { stroke: var(--brass); transition: stroke 0.3s; }
+.theme-card:hover .theme-arrow { border-color: var(--brass); }
+.theme-card.open .theme-arrow { background: var(--brass); transform: rotate(45deg); border-color: var(--brass); }
+.theme-card.open .theme-arrow svg { stroke: var(--dark-surface); }
+
+/* Parallax line decoration */
+.theme-card-line {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 1px;
+  background: rgba(168,145,103,0.0); z-index: 0;
+  transition: background 0.4s;
+}
+.theme-card:hover .theme-card-line { background: rgba(168,145,103,0.15); }
+
+/* FOOTER */
+footer { background: var(--dark-surface); border-top: 0.5px solid rgba(168,145,103,0.1); padding: 28px clamp(24px,8vw,120px); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
+footer p { font-size: 11px; color: rgba(242,240,234,0.25); letter-spacing: 0.05em; }
+footer a { color: rgba(242,240,234,0.4); text-decoration: none; transition: color 0.3s; }
+footer a:hover { color: var(--brass); }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.85s ease, transform 0.85s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-mobile { display: flex; }
+  .theme-card-inner { grid-template-columns: 48px 1fr auto; gap: 0 16px; }
+  .theme-expand-inner { padding-left: calc(48px + 16px); }
+  .hero-count { display: none; }
+  footer { flex-direction: column; gap: 10px; text-align: center; }
+  footer p { font-size: 10px; }
+}
+.mobile-menu { position: fixed; inset: 0; z-index: 101; background: var(--dark-surface); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 36px; opacity: 0; pointer-events: none; transition: opacity 0.35s; }
+.mobile-menu.active { opacity: 1; pointer-events: all; }
+.mobile-menu a { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.mobile-menu a:hover { color: var(--brass); }
+.mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--stone); font-size: 40px; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; }
+@media (max-width: 400px) { .mobile-menu a { font-size: 24px; } }
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="progress"></div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 512 512" fill="none">
+      <g stroke="#F2F0EA" stroke-width="14" fill="none" transform="translate(256,200)">
+        <path d="M -95,-40 A120,120 0 0 0 -95,110"/>
+        <path d="M 95,-40 A120,120 0 0 1 95,110"/>
+        <line x1="0" y1="-140" x2="0" y2="20"/>
+        <line x1="-15" y1="40" x2="-15" y2="180"/>
+      </g>
+    </svg>
+    <div class="nav-logo-text">Bombay Investors Club</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#inside">Inside the Club</a>
+    <a href="index.html#membership">Membership</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="exploring.html" class="active">What We're Exploring</a>
+  </div>
+  <div class="nav-mobile" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">&times;</button>
+  <a href="index.html#inside" onclick="toggleMenu()">Inside the Club</a>
+  <a href="index.html#membership" onclick="toggleMenu()">Membership</a>
+  <a href="index.html#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+  <a href="exploring.html" onclick="toggleMenu()">What We're Exploring</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg">
+    <div class="hero-bg-circle" style="width:600px;height:600px;"></div>
+    <div class="hero-bg-circle" style="width:1000px;height:1000px;animation-delay:-3s;"></div>
+    <div class="hero-bg-circle" style="width:1400px;height:1400px;animation-delay:-6s;"></div>
+  </div>
+  <div class="hero-eyebrow">Upcoming Conversations</div>
+  <h1 class="hero-title">What We're<br><em>Exploring</em></h1>
+  <p class="hero-sub">A preview of the themes shaping our upcoming conversations.</p>
+  <div class="hero-count">
+    <div class="hero-count-num">05</div>
+    <div class="hero-count-label">Active Themes</div>
+  </div>
+</section>
+
+<!-- THEMES -->
+<main class="themes-section">
+
+  <div class="theme-card reveal reveal-delay-1" onclick="toggleCard(this)">
+    <div class="theme-card-inner">
+      <div class="theme-num">01</div>
+      <div class="theme-main">
+        <div class="theme-tag">Technology &amp; Macro</div>
+        <h2 class="theme-title">How AI Could Reshape Real Estate</h2>
+      </div>
+      <div class="theme-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.5">
+          <line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/>
+        </svg>
+      </div>
+    </div>
+    <div class="theme-expand">
+      <div class="theme-expand-inner">
+        <p>Exploring the second-order effects of AI on real estate, including office demand, housing markets, and data centres.</p>
+      </div>
+    </div>
+    <div class="theme-card-line"></div>
+  </div>
+
+  <div class="theme-card reveal reveal-delay-2" onclick="toggleCard(this)">
+    <div class="theme-card-inner">
+      <div class="theme-num">02</div>
+      <div class="theme-main">
+        <div class="theme-tag">Roundtable</div>
+        <h2 class="theme-title">Geopolitics &amp; Capital Allocation</h2>
+      </div>
+      <div class="theme-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.5">
+          <line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/>
+        </svg>
+      </div>
+    </div>
+    <div class="theme-expand">
+      <div class="theme-expand-inner">
+        <p>An expert-led roundtable on how shifting global power dynamics and trade realignments influence investment decisions.</p>
+      </div>
+    </div>
+    <div class="theme-card-line"></div>
+  </div>
+
+  <div class="theme-card reveal reveal-delay-3" onclick="toggleCard(this)">
+    <div class="theme-card-inner">
+      <div class="theme-num">03</div>
+      <div class="theme-main">
+        <div class="theme-tag">Deep Dive</div>
+        <h2 class="theme-title">Live Investment Discussion: Demerger Opportunities</h2>
+      </div>
+      <div class="theme-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.5">
+          <line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/>
+        </svg>
+      </div>
+    </div>
+    <div class="theme-expand">
+      <div class="theme-expand-inner">
+        <p>Discussing listed companies where corporate restructurings may unlock significant shareholder value.</p>
+      </div>
+    </div>
+    <div class="theme-card-line"></div>
+  </div>
+
+  <div class="theme-card reveal reveal-delay-4" onclick="toggleCard(this)">
+    <div class="theme-card-inner">
+      <div class="theme-num">04</div>
+      <div class="theme-main">
+        <div class="theme-tag">Sector Deep Dive</div>
+        <h2 class="theme-title">Investing in India's Battery Chemicals Value Chain</h2>
+      </div>
+      <div class="theme-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.5">
+          <line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/>
+        </svg>
+      </div>
+    </div>
+    <div class="theme-expand">
+      <div class="theme-expand-inner">
+        <p>A deep dive into listed businesses enabling the growth of electric vehicles, energy storage, and advanced battery manufacturing.</p>
+      </div>
+    </div>
+    <div class="theme-card-line"></div>
+  </div>
+
+  <div class="theme-card reveal reveal-delay-5" onclick="toggleCard(this)">
+    <div class="theme-card-inner">
+      <div class="theme-num">05</div>
+      <div class="theme-main">
+        <div class="theme-tag">Emerging Theme</div>
+        <h2 class="theme-title">Investing in India's Sports Ecosystem</h2>
+      </div>
+      <div class="theme-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.5">
+          <line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/>
+        </svg>
+      </div>
+    </div>
+    <div class="theme-expand">
+      <div class="theme-expand-inner">
+        <p>Examining opportunities across franchises, sports technology, gaming, infrastructure, and adjacent businesses.</p>
+      </div>
+    </div>
+    <div class="theme-card-line"></div>
+  </div>
+
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Bombay Investors Club. All rights reserved.</p>
+  <p>For any queries, please reach out at <a href="mailto:hello@bombayinvestorsclub.in">hello@bombayinvestorsclub.in</a></p>
+</footer>
+
+<script>
+(function(){
+  var cur = document.getElementById('cursor');
+  var ring = document.getElementById('cursor-ring');
+  var mx = 0, my = 0, rx = 0, ry = 0;
+  var isPointerFine = window.matchMedia('(pointer:fine)').matches;
+
+  if (isPointerFine) {
+    document.addEventListener('mousemove', function(e) { mx = e.clientX; my = e.clientY; });
+    (function animCursor() {
+      cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+      rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(animCursor);
+    })();
+    document.querySelectorAll('a, button, .theme-card').forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        cur.style.width = '16px'; cur.style.height = '16px';
+        ring.style.width = '54px'; ring.style.height = '54px';
+      });
+      el.addEventListener('mouseleave', function() {
+        cur.style.width = '10px'; cur.style.height = '10px';
+        ring.style.width = '38px'; ring.style.height = '38px';
+      });
+    });
+  }
+
+  /* Scroll progress + nav */
+  var bar = document.getElementById('progress');
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    var st = window.scrollY;
+    var dh = document.body.scrollHeight - window.innerHeight;
+    if (dh > 0) bar.style.width = (st / dh * 100) + '%';
+    nav.classList.toggle('scrolled', st > 60);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Parallax hero bg lines on mousemove */
+  if (isPointerFine) {
+    document.addEventListener('mousemove', function(e) {
+      var xPct = (e.clientX / window.innerWidth - 0.5) * 20;
+      var yPct = (e.clientY / window.innerHeight - 0.5) * 12;
+      var circles = document.querySelectorAll('.hero-bg-circle');
+      circles.forEach(function(c, i) {
+        var factor = (i + 1) * 0.4;
+        c.style.transform = 'translate(calc(-50% + ' + (xPct * factor) + 'px), calc(-50% + ' + (yPct * factor) + 'px))';
+      });
+    });
+  }
+
+  /* Mobile menu */
+  window.toggleMenu = function() {
+    document.getElementById('mobileMenu').classList.toggle('active');
+  };
+
+  /* Accordion */
+  window.toggleCard = function(card) {
+    var wasOpen = card.classList.contains('open');
+    document.querySelectorAll('.theme-card.open').forEach(function(c) { c.classList.remove('open'); });
+    if (!wasOpen) card.classList.add('open');
+  };
+
+  /* Reveal on scroll */
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+  /* Stagger vertical bg lines on load */
+  var bg = document.getElementById('heroBg');
+  var lineCount = 7;
+  for (var i = 0; i < lineCount; i++) {
+    var line = document.createElement('div');
+    line.className = 'hero-bg-line';
+    line.style.left = ((i + 1) / (lineCount + 1) * 100) + '%';
+    line.style.opacity = (0.03 + i * 0.01).toString();
+    bg.appendChild(line);
+  }
+})();
+</script>
+</body>
+</html>
