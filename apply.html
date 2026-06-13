@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0H6ZT1QZWB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0H6ZT1QZWB');
+</script>
+<title>Apply for Membership — Bombay Investors Club</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="description" content="Apply for membership at Bombay Investors Club — a curated private members' community for thoughtful investors.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.bombayinvestorsclub.in/apply.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --forest: #1F2D27;
+  --slate: #4B5B55;
+  --stone: #F2F0EA;
+  --soft-grey: #D9D7D0;
+  --charcoal: #242826;
+  --brass: #A89167;
+  --brass-light: #C4AE8A;
+  --dark-surface: #171F1C;
+  --mid-surface: #1D2921;
+  --card-border: rgba(168,145,103,0.18);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--dark-surface);
+  color: var(--stone);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: none;
+}
+@media (pointer: coarse) { body { cursor: auto; } }
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 400; }
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* DUAL CURSOR */
+#cursor {
+  position: fixed; width: 10px; height: 10px;
+  background: var(--brass); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: width 0.3s, height 0.3s;
+}
+#cursor-ring {
+  position: fixed; width: 38px; height: 38px;
+  border: 1px solid rgba(168,145,103,0.45);
+  border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width 0.3s, height 0.3s;
+}
+@media (pointer: coarse) { #cursor, #cursor-ring { display: none; } }
+
+/* SCROLL PROGRESS */
+#progress {
+  position: fixed; top: 0; left: 0; height: 2px;
+  background: var(--brass); z-index: 200; width: 0%;
+  transition: width 0.06s linear;
+}
+
+a, button, input, textarea, label, select { cursor: none; }
+@media (pointer: coarse) { a, button, input, textarea, label, select { cursor: auto; } }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 clamp(24px,5vw,80px); height: 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(23,31,28,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(168,145,103,0.15);
+  box-shadow: 0 2px 40px rgba(0,0,0,0.2);
+}
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo svg { height: 38px; width: 38px; }
+.nav-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px; letter-spacing: 0.06em;
+  color: var(--stone); font-weight: 500;
+}
+.nav-back {
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(242,240,234,0.5); text-decoration: none; font-weight: 400;
+  transition: color 0.3s; display: flex; align-items: center; gap: 8px;
+}
+.nav-back:hover { color: var(--brass); }
+.nav-back svg { stroke: currentColor; }
+
+/* FORM PAGE LAYOUT */
+.form-page {
+  position: relative; z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 120px clamp(24px,6vw,48px) 80px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 64px;
+  opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
+}
+.form-header-logo { margin-bottom: 32px; }
+.form-header-logo svg { height: 64px; width: 64px; }
+.form-header h1 {
+  font-size: clamp(28px,4vw,44px);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: var(--stone);
+}
+.form-header p {
+  font-size: clamp(14px,1.2vw,16px);
+  color: rgba(242,240,234,0.4);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* STEP INDICATOR */
+.step-indicator {
+  display: flex; justify-content: center; gap: 8px;
+  margin-bottom: 48px;
+  opacity: 0; animation: fadeUp 0.8s ease 0.35s forwards;
+}
+.step-dot {
+  width: 32px; height: 2px;
+  background: rgba(168,145,103,0.2);
+  border-radius: 1px;
+  transition: background 0.4s;
+}
+.step-dot.active { background: var(--brass); }
+.step-dot.completed { background: rgba(168,145,103,0.5); }
+
+/* FORM SECTIONS */
+.form-section {
+  display: none;
+  opacity: 0; animation: fadeUp 0.6s ease forwards;
+}
+.form-section.active { display: block; }
+
+.form-section-label {
+  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  font-weight: 500; color: var(--brass); margin-bottom: 12px;
+}
+.form-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px,2.5vw,30px);
+  color: var(--stone);
+  margin-bottom: 8px;
+}
+.form-section-desc {
+  font-size: 14px; color: rgba(242,240,234,0.35);
+  line-height: 1.7; margin-bottom: 40px;
+}
+
+/* FORM FIELDS */
+.field-group {
+  margin-bottom: 28px;
+}
+.field-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(242,240,234,0.6);
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+.field-group label .req {
+  color: var(--brass);
+  margin-left: 2px;
+}
+
+.field-group input[type="text"],
+.field-group input[type="email"],
+.field-group input[type="tel"],
+.field-group input[type="url"],
+.field-group textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(168,145,103,0.2);
+  padding: 12px 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--stone);
+  outline: none;
+  transition: border-color 0.3s;
+  cursor: none;
+}
+@media (pointer: coarse) {
+  .field-group input[type="text"],
+  .field-group input[type="email"],
+  .field-group input[type="tel"],
+  .field-group input[type="url"],
+  .field-group textarea { cursor: auto; }
+}
+.field-group input:focus,
+.field-group textarea:focus {
+  border-bottom-color: var(--brass);
+}
+.field-group input::placeholder,
+.field-group textarea::placeholder {
+  color: rgba(242,240,234,0.18);
+}
+.field-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.7;
+}
+
+/* CHECKBOX / RADIO GROUPS */
+.check-group {
+  margin-bottom: 32px;
+}
+.check-group .check-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(242,240,234,0.6);
+  margin-bottom: 16px;
+  display: block;
+  letter-spacing: 0.02em;
+}
+.check-group .check-label .req {
+  color: var(--brass);
+  margin-left: 2px;
+}
+.check-options {
+  display: flex; flex-direction: column; gap: 0;
+}
+.check-option {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(168,145,103,0.06);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+@media (pointer: coarse) { .check-option { cursor: pointer; } }
+.check-option:last-child { border-bottom: none; }
+.check-option:hover { color: var(--brass); }
+.check-option input[type="checkbox"],
+.check-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border: 1px solid rgba(168,145,103,0.3);
+  border-radius: 3px;
+  background: transparent;
+  flex-shrink: 0;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+}
+.check-option input[type="radio"] { border-radius: 50%; }
+.check-option input:checked {
+  border-color: var(--brass);
+  background: var(--brass);
+}
+.check-option input:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 6px;
+  width: 4px; height: 8px;
+  border: solid var(--dark-surface);
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+.check-option input[type="radio"]:checked::after {
+  top: 4px; left: 4px;
+  width: 8px; height: 8px;
+  border: none;
+  border-radius: 50%;
+  background: var(--dark-surface);
+  transform: none;
+}
+.check-option span {
+  font-size: 14px;
+  color: rgba(242,240,234,0.55);
+  transition: color 0.2s;
+}
+.check-option:hover span { color: var(--stone); }
+
+/* FORM BUTTONS */
+.form-actions {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(168,145,103,0.1);
+}
+.btn-back {
+  background: none; border: none;
+  color: rgba(242,240,234,0.4);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 400;
+  padding: 12px 0;
+  transition: color 0.3s;
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-back:hover { color: var(--brass); }
+.btn-back svg { stroke: currentColor; }
+
+.btn-next, .btn-submit {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 36px;
+  border: 1px solid var(--brass); color: var(--brass);
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.4s;
+}
+.btn-next:hover, .btn-submit:hover {
+  background: var(--brass); color: var(--dark-surface);
+}
+.btn-next svg, .btn-submit svg { stroke: currentColor; }
+
+.btn-submit { margin-left: auto; }
+
+/* SUCCESS STATE */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 80px 0;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+.form-success.active { display: block; }
+.form-success svg { margin-bottom: 32px; }
+.form-success h2 {
+  font-size: clamp(26px,3vw,36px);
+  color: var(--stone);
+  margin-bottom: 16px;
+}
+.form-success p {
+  font-size: 15px;
+  color: rgba(242,240,234,0.4);
+  line-height: 1.7;
+  max-width: 440px;
+  margin: 0 auto 40px;
+}
+.btn-home {
+  display: inline-block; padding: 14px 40px;
+  border: 1px solid var(--brass); color: var(--brass);
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 500;
+  transition: all 0.4s;
+}
+.btn-home:hover { background: var(--brass); color: var(--dark-surface); }
+
+/* ERROR */
+.field-error {
+  font-size: 12px;
+  color: #c47a6a;
+  margin-top: 6px;
+  display: none;
+}
+.field-group.error .field-error { display: block; }
+.field-group.error input,
+.field-group.error textarea {
+  border-bottom-color: #c47a6a;
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark-surface);
+  border-top: 0.5px solid rgba(168,145,103,0.1);
+  padding: 28px clamp(24px,8vw,120px);
+  display: flex; justify-content: space-between; align-items: center;
+  position: relative; z-index: 2;
+}
+footer p { font-size: 11px; color: rgba(242,240,234,0.25); letter-spacing: 0.05em; }
+footer a { color: rgba(242,240,234,0.4); text-decoration: none; transition: color 0.3s; }
+footer a:hover { color: var(--brass); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .form-page { padding: 100px 24px 60px; }
+  .form-header { margin-bottom: 48px; }
+  .form-header-logo svg { height: 48px; width: 48px; }
+  .form-section-title { font-size: 22px; }
+  .form-actions { gap: 16px; }
+  .btn-next, .btn-submit { padding: 12px 28px; font-size: 10px; }
+  footer { flex-direction: column; gap: 10px; text-align: center; }
+  footer p { font-size: 10px; }
+}
+@media (max-width: 400px) {
+  .form-header h1 { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="progress"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 512 512" fill="none">
+      <g stroke="#F2F0EA" stroke-width="14" fill="none" transform="translate(256,200)">
+        <path d="M -95,-40 A120,120 0 0 0 -95,110"/>
+        <path d="M 95,-40 A120,120 0 0 1 95,110"/>
+        <line x1="0" y1="-140" x2="0" y2="20"/>
+        <line x1="-15" y1="40" x2="-15" y2="180"/>
+      </g>
+    </svg>
+    <div class="nav-logo-text">Bombay Investors Club</div>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<div class="form-page">
+  <!-- HEADER -->
+  <div class="form-header">
+    <div class="form-header-logo">
+      <svg viewBox="0 0 512 512" fill="none">
+        <g stroke="#F2F0EA" stroke-width="9" fill="none" transform="translate(256,200)">
+          <path d="M -95,-40 A120,120 0 0 0 -95,110"/>
+          <path d="M 95,-40 A120,120 0 0 1 95,110"/>
+          <line x1="0" y1="-140" x2="0" y2="20"/>
+          <line x1="-15" y1="40" x2="-15" y2="180"/>
+        </g>
+      </svg>
+    </div>
+    <h1>Membership Application</h1>
+    <p>Tell us about yourself. We'll review your application and be in touch regarding next steps.</p>
+  </div>
+
+  <!-- STEP INDICATOR -->
+  <div class="step-indicator" id="stepIndicator">
+    <div class="step-dot active" data-step="1"></div>
+    <div class="step-dot" data-step="2"></div>
+    <div class="step-dot" data-step="3"></div>
+    <div class="step-dot" data-step="4"></div>
+  </div>
+
+  <!-- THE FORM -->
+  <div id="formContainer">
+
+    <!-- SECTION 1: About You -->
+    <div class="form-section active" data-step="1">
+      <div class="form-section-label">Section 1 of 4</div>
+      <h2 class="form-section-title">About You</h2>
+      <div class="form-section-desc">Your basic details and professional background.</div>
+
+      <div class="field-group">
+        <label>Full Name <span class="req">*</span></label>
+        <input type="text" name="Full Name" required placeholder="Enter your full name">
+        <div class="field-error">This field is required.</div>
+      </div>
+      <div class="field-group">
+        <label>Email Address <span class="req">*</span></label>
+        <input type="email" name="Email Address" required placeholder="your@email.com">
+        <div class="field-error">Please enter a valid email address.</div>
+      </div>
+      <div class="field-group">
+        <label>Mobile Number <span class="req">*</span></label>
+        <input type="tel" name="Mobile Number" required placeholder="+91">
+        <div class="field-error">This field is required.</div>
+      </div>
+      <div class="field-group">
+        <label>City of Residence <span class="req">*</span></label>
+        <input type="text" name="City of Residence" required placeholder="e.g. Mumbai">
+        <div class="field-error">This field is required.</div>
+      </div>
+      <div class="field-group">
+        <label>LinkedIn Profile</label>
+        <input type="url" name="LinkedIn Profile" placeholder="https://linkedin.com/in/...">
+      </div>
+      <div class="field-group">
+        <label>Current Profession / Role</label>
+        <input type="text" name="Current Profession / Role" placeholder="e.g. Portfolio Manager">
+      </div>
+      <div class="field-group">
+        <label>Organisation / Company</label>
+        <input type="text" name="Organisation / Company" placeholder="e.g. Seicho Capital">
+      </div>
+
+      <div class="form-actions">
+        <div></div>
+        <button type="button" class="btn-next" onclick="nextStep()">
+          Continue
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- SECTION 2: Investing Background -->
+    <div class="form-section" data-step="2">
+      <div class="form-section-label">Section 2 of 4</div>
+      <h2 class="form-section-title">Investing Background</h2>
+      <div class="form-section-desc">Help us understand your investment experience and interests.</div>
+
+      <div class="check-group">
+        <div class="check-label">Which best describes you? <span class="req">*</span></div>
+        <div class="check-options">
+          <label class="check-option">
+            <input type="radio" name="Which Best Describes You" value="Public Market Investor" required>
+            <span>Public Market Investor</span>
+          </label>
+          <label class="check-option">
+            <input type="radio" name="Which Best Describes You" value="Private Markets Investor">
+            <span>Private Markets Investor</span>
+          </label>
+          <label class="check-option">
+            <input type="radio" name="Which Best Describes You" value="Investment Professional">
+            <span>Investment Professional</span>
+          </label>
+          <label class="check-option">
+            <input type="radio" name="Which Best Describes You" value="Family Office Representative">
+            <span>Family Office Representative</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="check-group">
+        <div class="check-label">Which areas interest you the most? <span class="req">*</span></div>
+        <div class="check-options">
+          <label class="check-option">
+            <input type="checkbox" name="Areas of Interest" value="Public Markets">
+            <span>Public Markets</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="Areas of Interest" value="Startups & Venture Investing">
+            <span>Startups &amp; Venture Investing</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="Areas of Interest" value="Macro & Geopolitics">
+            <span>Macro &amp; Geopolitics</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="Areas of Interest" value="Structured Debt">
+            <span>Structured Debt</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="Areas of Interest" value="Pre IPO Opportunities">
+            <span>Pre IPO Opportunities</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="Areas of Interest" value="Investing in Structured VC / PE Funds">
+            <span>Investing in Structured VC / PE Funds</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="Areas of Interest" value="International Investing">
+            <span>International Investing</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-back" onclick="prevStep()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back
+        </button>
+        <button type="button" class="btn-next" onclick="nextStep()">
+          Continue
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Thoughtful Questions -->
+    <div class="form-section" data-step="3">
+      <div class="form-section-label">Section 3 of 4</div>
+      <h2 class="form-section-title">Thoughtful Questions</h2>
+      <div class="form-section-desc">We'd love to understand what draws you to the community.</div>
+
+      <div class="field-group">
+        <label>Why would you like to join Bombay Investors Club? <span class="req">*</span></label>
+        <textarea name="Why Join BIC" required placeholder="Share your motivation for joining..."></textarea>
+        <div class="field-error">This field is required.</div>
+      </div>
+      <div class="field-group">
+        <label>What kinds of conversations or themes interest you most? <span class="req">*</span></label>
+        <textarea name="Conversations That Interest You" required placeholder="e.g. Public markets, geopolitics, startup investing..."></textarea>
+        <div class="field-error">This field is required.</div>
+      </div>
+      <div class="field-group">
+        <label>Is there a business, investment theme, or megatrend you are currently exploring deeply? <span class="req">*</span></label>
+        <textarea name="Current Exploration" required placeholder="Tell us what you're researching or thinking about..."></textarea>
+        <div class="field-error">This field is required.</div>
+      </div>
+      <div class="field-group">
+        <label>What do you hope to contribute to the community? <span class="req">*</span></label>
+        <textarea name="What You Hope to Contribute" required placeholder="How would you add to the community's learning?"></textarea>
+        <div class="field-error">This field is required.</div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-back" onclick="prevStep()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back
+        </button>
+        <button type="button" class="btn-next" onclick="nextStep()">
+          Continue
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- SECTION 4: Participation & Community -->
+    <div class="form-section" data-step="4">
+      <div class="form-section-label">Section 4 of 4</div>
+      <h2 class="form-section-title">Participation &amp; Community</h2>
+      <div class="form-section-desc">Help us tailor the experience for you.</div>
+
+      <div class="field-group">
+        <label>How did you hear about Bombay Investors Club?</label>
+        <input type="text" name="How Did You Hear About Us" placeholder="e.g. LinkedIn, referral, event...">
+      </div>
+
+      <div class="check-group">
+        <div class="check-label">Which formats would you be most interested in? <span class="req">*</span></div>
+        <div class="check-options">
+          <label class="check-option">
+            <input type="checkbox" name="Preferred Formats" value="Speaker Sessions">
+            <span>Speaker Sessions</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="Preferred Formats" value="Thematic Deep Dives">
+            <span>Thematic Deep Dives</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="Preferred Formats" value="Sessions by Professors">
+            <span>Sessions by Professors</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="Preferred Formats" value="Startup & Venture Sessions">
+            <span>Startup &amp; Venture Sessions</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="Preferred Formats" value="Small Group Discussions">
+            <span>Small Group Discussions</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="Preferred Formats" value="Offsites / Retreats">
+            <span>Offsites / Retreats</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-back" onclick="prevStep()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back
+        </button>
+        <button type="button" class="btn-submit" onclick="submitForm()" id="submitBtn">
+          Submit Application
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS STATE -->
+  <div class="form-success" id="formSuccess">
+    <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+      <circle cx="28" cy="28" r="27" stroke="#A89167" stroke-width="1.5"/>
+      <path d="M18 28l7 7 13-13" stroke="#A89167" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <h2>Application Received</h2>
+    <p>Thank you for your interest in Bombay Investors Club. We'll review your application and be in touch regarding next steps.</p>
+    <a href="index.html" class="btn-home">Return Home</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Bombay Investors Club. All rights reserved.</p>
+  <p>For any queries, please reach out at <a href="mailto:hello@bombayinvestorsclub.in">hello@bombayinvestorsclub.in</a></p>
+</footer>
+
+<script>
+(function(){
+  var currentStep = 1;
+  var totalSteps = 4;
+
+  /* ── Dual cursor ── */
+  var cur = document.getElementById('cursor');
+  var ring = document.getElementById('cursor-ring');
+  var mx = 0, my = 0, rx = 0, ry = 0;
+
+  if (window.matchMedia('(pointer:fine)').matches) {
+    document.addEventListener('mousemove', function(e) {
+      mx = e.clientX; my = e.clientY;
+    });
+    function animCursor() {
+      cur.style.left = mx + 'px';
+      cur.style.top  = my + 'px';
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+      requestAnimationFrame(animCursor);
+    }
+    animCursor();
+    document.querySelectorAll('a, button, input, textarea, .check-option').forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        cur.style.width = '16px'; cur.style.height = '16px';
+        ring.style.width = '52px'; ring.style.height = '52px';
+      });
+      el.addEventListener('mouseleave', function() {
+        cur.style.width = '10px'; cur.style.height = '10px';
+        ring.style.width = '38px'; ring.style.height = '38px';
+      });
+    });
+  }
+
+  /* ── Scroll progress ── */
+  var bar = document.getElementById('progress');
+  window.addEventListener('scroll', function() {
+    var h = document.body.scrollHeight - window.innerHeight;
+    if (h > 0) bar.style.width = (window.scrollY / h * 100) + '%';
+  }, { passive: true });
+
+  /* ── Step navigation ── */
+  function showStep(step) {
+    document.querySelectorAll('.form-section').forEach(function(s) {
+      s.classList.remove('active');
+      s.style.opacity = '0';
+    });
+    var target = document.querySelector('.form-section[data-step="'+step+'"]');
+    if (target) {
+      target.classList.add('active');
+      setTimeout(function(){ target.style.opacity = '1'; }, 10);
+    }
+    document.querySelectorAll('.step-dot').forEach(function(d) {
+      var s = parseInt(d.getAttribute('data-step'));
+      d.classList.remove('active','completed');
+      if (s === step) d.classList.add('active');
+      else if (s < step) d.classList.add('completed');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(step) {
+    var section = document.querySelector('.form-section[data-step="'+step+'"]');
+    var valid = true;
+
+    // Text/email/tel inputs
+    section.querySelectorAll('input[required], textarea[required]').forEach(function(input) {
+      var group = input.closest('.field-group');
+      if (group) {
+        if (!input.value.trim() || (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value))) {
+          group.classList.add('error');
+          valid = false;
+        } else {
+          group.classList.remove('error');
+        }
+      }
+    });
+
+    // Radio groups — check if any required radio is checked
+    section.querySelectorAll('input[type="radio"][required]').forEach(function(radio) {
+      var name = radio.name;
+      if (!section.querySelector('input[name="'+name+'"]:checked')) {
+        valid = false;
+      }
+    });
+
+    return valid;
+  }
+
+  window.nextStep = function() {
+    if (!validateStep(currentStep)) return;
+    if (currentStep < totalSteps) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  };
+
+  window.prevStep = function() {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  };
+
+  /* ── Collect checkbox values ── */
+  function getCheckboxValues(name) {
+    var checked = document.querySelectorAll('input[name="'+name+'"]:checked');
+    var vals = [];
+    checked.forEach(function(c) { vals.push(c.value); });
+    return vals.join(', ');
+  }
+
+  /* ── Submit to Web3Forms ── */
+  window.submitForm = function() {
+    if (!validateStep(currentStep)) return;
+
+    var btn = document.getElementById('submitBtn');
+    btn.innerHTML = 'Submitting...';
+    btn.style.pointerEvents = 'none';
+    btn.style.opacity = '0.5';
+
+    var formData = new FormData();
+    formData.append('access_key', 'b801b6df-ad80-4cc9-a2e5-ed39aba77058');
+    formData.append('subject', 'New BIC Membership Application');
+    formData.append('from_name', 'Bombay Investors Club Website');
+
+    // Section 1
+    document.querySelectorAll('.form-section[data-step="1"] input').forEach(function(input) {
+      if (input.value.trim()) formData.append(input.name, input.value.trim());
+    });
+
+    // Section 2
+    var describes = document.querySelector('input[name="Which Best Describes You"]:checked');
+    if (describes) formData.append('Which Best Describes You', describes.value);
+    var interests = getCheckboxValues('Areas of Interest');
+    if (interests) formData.append('Areas of Interest', interests);
+
+    // Section 3
+    document.querySelectorAll('.form-section[data-step="3"] textarea').forEach(function(ta) {
+      if (ta.value.trim()) formData.append(ta.name, ta.value.trim());
+    });
+
+    // Section 4
+    var hearAbout = document.querySelector('input[name="How Did You Hear About Us"]');
+    if (hearAbout && hearAbout.value.trim()) formData.append('How Did You Hear About Us', hearAbout.value.trim());
+    var formats = getCheckboxValues('Preferred Formats');
+    if (formats) formData.append('Preferred Formats', formats);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.success) {
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('stepIndicator').style.display = 'none';
+        var success = document.getElementById('formSuccess');
+        success.classList.add('active');
+      } else {
+        alert('Something went wrong. Please try again or email us at hello@bombayinvestorsclub.in');
+        btn.innerHTML = 'Submit Application <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+        btn.style.pointerEvents = '';
+        btn.style.opacity = '';
+      }
+    })
+    .catch(function() {
+      alert('Something went wrong. Please try again or email us at hello@bombayinvestorsclub.in');
+      btn.innerHTML = 'Submit Application <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+      btn.style.pointerEvents = '';
+      btn.style.opacity = '';
+    });
+  };
+
+  /* ── Clear errors on input ── */
+  document.querySelectorAll('input, textarea').forEach(function(el) {
+    el.addEventListener('input', function() {
+      var group = el.closest('.field-group');
+      if (group) group.classList.remove('error');
+    });
+  });
+
+})();
+</script>
+</body>
+</html>

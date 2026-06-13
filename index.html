@@ -12,7 +12,11 @@
   gtag('config', 'G-0H6ZT1QZWB');
 </script>
 <title>Bombay Investors Club</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='80' fill='%231F2D27'/%3E%3Cg stroke='%23F2F0EA' stroke-width='14' fill='none' transform='translate(256,200)'%3E%3Cpath d='M-95-40A120 120 0 0 0-95 110'/%3E%3Cpath d='M95-40A120 120 0 0 1 95 110'/%3E%3Cline x1='0' y1='-140' x2='0' y2='20'/%3E%3Cline x1='-15' y1='40' x2='-15' y2='180'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="description" content="Bombay Investors Club is a curated private members' community for thoughtful investors. Exchange ideas, explore opportunities, and build long-term perspectives through collaborative learning.">
 <meta name="keywords" content="Bombay Investors Club, private members club, investing community, Mumbai investors, angel investing, venture capital, deal flow, investment club India">
 <meta name="author" content="Bombay Investors Club">
@@ -202,11 +206,143 @@ section { padding: clamp(60px,10vw,120px) clamp(24px,8vw,120px); position: relat
 .membership .section-desc { color: rgba(242,240,234,0.4); max-width: 600px; }
 .mem-para { margin-top: 16px; }
 
-/* FAQ */
-.faq {
+/* EXPLORING */
+.exploring {
   background: var(--mid-surface);
   border-top: 0.5px solid rgba(168,145,103,0.1);
   border-bottom: 0.5px solid rgba(168,145,103,0.1);
+}
+.exploring .section-title { color: var(--stone); margin-bottom: 16px; }
+.exploring .section-desc { color: rgba(242,240,234,0.4); margin-bottom: 56px; max-width: 600px; }
+.exploring-grid { max-width: 1100px; }
+
+/* Grid itself stays visible, children stagger in */
+.exploring-grid.reveal { opacity: 1; transform: none; }
+
+.exploring-card {
+  position: relative;
+  border-top: 1px solid rgba(168,145,103,0.12);
+  padding: clamp(28px,3vw,40px) 56px clamp(28px,3vw,40px) 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease, background 0.5s ease;
+}
+.exploring-card:last-child { border-bottom: 1px solid rgba(168,145,103,0.12); }
+
+/* Stagger reveal — triggered by parent .visible class from existing observer */
+.exploring-grid.visible .exploring-card { opacity: 1; transform: translateY(0); }
+.exploring-grid.visible .exploring-card:nth-child(1) { transition-delay: 0s, 0s, 0s; }
+.exploring-grid.visible .exploring-card:nth-child(2) { transition-delay: 0.1s, 0.1s, 0s; }
+.exploring-grid.visible .exploring-card:nth-child(3) { transition-delay: 0.2s, 0.2s, 0s; }
+.exploring-grid.visible .exploring-card:nth-child(4) { transition-delay: 0.3s, 0.3s, 0s; }
+.exploring-grid.visible .exploring-card:nth-child(5) { transition-delay: 0.4s, 0.4s, 0s; }
+.exploring-grid.visible .exploring-card:nth-child(6) { transition-delay: 0.5s, 0.5s, 0s; }
+
+.exploring-card-inner {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.exploring-card h3 {
+  font-size: clamp(18px,1.8vw,24px);
+  color: var(--stone);
+  margin-bottom: 12px;
+  transition: color 0.4s ease;
+  position: relative;
+}
+.exploring-card h3::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: var(--brass);
+  margin-top: 14px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.exploring-card p {
+  font-size: 14px; line-height: 1.75;
+  color: rgba(242,240,234,0.4); max-width: 680px;
+  transition: color 0.4s ease;
+}
+
+/* Hover interactions */
+.exploring-card:hover .exploring-card-inner { transform: translateX(10px); }
+.exploring-card:hover h3 { color: var(--brass-light); }
+.exploring-card:hover h3::after { width: 56px; }
+.exploring-card:hover p { color: rgba(242,240,234,0.65); }
+
+/* Arrow indicator that slides in on hover */
+.exploring-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(-16px);
+  opacity: 0;
+  color: var(--brass);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.exploring-card:hover .exploring-arrow {
+  opacity: 0.7;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* FEATURED variant — Co-Investments */
+.exploring-card.featured {
+  padding-left: 32px;
+  background: linear-gradient(90deg, rgba(168,145,103,0.05) 0%, rgba(168,145,103,0.012) 60%, transparent 100%);
+}
+.exploring-card.featured::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: clamp(28px,3vw,40px);
+  bottom: clamp(28px,3vw,40px);
+  width: 2px;
+  background: var(--brass);
+  opacity: 0.85;
+}
+.exploring-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.exploring-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--brass);
+  animation: pulse-dot 2.2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(168,145,103,0.5); }
+  50% { opacity: 0.55; box-shadow: 0 0 0 7px rgba(168,145,103,0); }
+}
+.exploring-card.featured h3 {
+  font-size: clamp(20px,2.2vw,28px);
+  font-weight: 500;
+}
+.exploring-card.featured h3::after { background: var(--brass-light); }
+.exploring-card.featured:hover {
+  background: linear-gradient(90deg, rgba(168,145,103,0.08) 0%, rgba(168,145,103,0.02) 60%, transparent 100%);
+}
+
+/* Reduced motion — respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  .exploring-card { transition: opacity 0.3s ease; transform: none !important; }
+  .exploring-card-inner { transition: none; }
+  .exploring-eyebrow::before { animation: none; }
+  .exploring-card h3::after { transition: none; }
+}
+
+/* FAQ */
+.faq {
+  background: var(--dark-surface);
 }
 .faq .section-title { color: var(--stone); margin-bottom: 56px; }
 .faq-list { max-width: 780px; }
@@ -341,7 +477,7 @@ footer a:hover { color: var(--brass); }
 <div id="cursor-ring"></div>
 <div id="progress"></div>
 
-<!-- NAV — no Apply button -->
+<!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">
     <svg viewBox="0 0 512 512" fill="none">
@@ -357,9 +493,9 @@ footer a:hover { color: var(--brass); }
   <div class="nav-links">
     <a href="#inside">Inside the Club</a>
     <a href="#membership">Membership</a>
+    <a href="#exploring">Exploring</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
-    <a href="exploring.html">What We're Exploring</a>
   </div>
   <div class="nav-mobile" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -371,12 +507,12 @@ footer a:hover { color: var(--brass); }
   <button class="mobile-close" onclick="toggleMenu()">&times;</button>
   <a href="#inside" onclick="toggleMenu()">Inside the Club</a>
   <a href="#membership" onclick="toggleMenu()">Membership</a>
+  <a href="#exploring" onclick="toggleMenu()">Exploring</a>
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
-  <a href="exploring.html">What We're Exploring</a>
 </div>
 
-<!-- HERO — no Apply button -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-logo">
@@ -448,6 +584,72 @@ footer a:hover { color: var(--brass); }
   </div>
 </section>
 
+<!-- WHAT WE'RE EXPLORING -->
+<section class="exploring" id="exploring">
+  <div class="reveal">
+    <div class="section-label">What We're Exploring</div>
+    <h2 class="section-title">Themes Shaping Our<br>Upcoming Conversations</h2>
+    <p class="section-desc">A preview of the ideas and industries our community is currently examining.</p>
+  </div>
+  <div class="exploring-grid reveal">
+    <div class="exploring-card">
+      <div class="exploring-card-inner">
+        <h3>How AI Could Reshape Real Estate</h3>
+        <p>Exploring the second-order effects of AI on real estate, including office demand, housing markets, and data centres.</p>
+      </div>
+      <div class="exploring-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.25" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+    <div class="exploring-card featured">
+      <div class="exploring-card-inner">
+        <div class="exploring-eyebrow">Featured Initiative</div>
+        <h3>Co-Investments in Consumer Businesses</h3>
+        <p>Exploring opportunities to co-invest alongside an emerging consumer-focused fund in some of their upcoming deals, without any management fees or carried interest.</p>
+      </div>
+      <div class="exploring-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.25" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+    <div class="exploring-card">
+      <div class="exploring-card-inner">
+        <h3>Geopolitics &amp; Capital Allocation</h3>
+        <p>An expert-led roundtable on how shifting global power dynamics and trade realignments influence investment decisions.</p>
+      </div>
+      <div class="exploring-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.25" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+    <div class="exploring-card">
+      <div class="exploring-card-inner">
+        <h3>Live Investment Discussion: Demerger Opportunities</h3>
+        <p>Discussing listed companies where corporate restructurings may unlock significant shareholder value.</p>
+      </div>
+      <div class="exploring-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.25" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+    <div class="exploring-card">
+      <div class="exploring-card-inner">
+        <h3>Investing in India's Battery Chemicals Value Chain</h3>
+        <p>A deep dive into listed businesses enabling the growth of electric vehicles, energy storage, and advanced battery manufacturing.</p>
+      </div>
+      <div class="exploring-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.25" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+    <div class="exploring-card">
+      <div class="exploring-card-inner">
+        <h3>Investing in India's Sports Ecosystem</h3>
+        <p>Examining opportunities across franchises, sports technology, gaming, infrastructure, and adjacent businesses.</p>
+      </div>
+      <div class="exploring-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.25" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="reveal">
@@ -500,7 +702,7 @@ footer a:hover { color: var(--brass); }
   </div>
 </section>
 
-<!-- CONTACT — Apply button lives here only -->
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="reveal">
     <div class="section-label">Get in Touch</div>
@@ -528,7 +730,7 @@ footer a:hover { color: var(--brass); }
         </g>
       </svg>
     </div>
-    <a href="https://forms.gle/waQgaDvkduSGwrA6A" target="_blank" class="contact-apply-btn">Apply for Membership</a>
+    <a href="apply.html" class="contact-apply-btn">Apply for Membership</a>
   </div>
 </section>
 
@@ -540,7 +742,7 @@ footer a:hover { color: var(--brass); }
 
 <script>
 (function(){
-  /* ── Dual cursor (Draft 5 style) ── */
+  /* ── Dual cursor ── */
   var cur = document.getElementById('cursor');
   var ring = document.getElementById('cursor-ring');
   var mx = 0, my = 0, rx = 0, ry = 0;
@@ -562,7 +764,6 @@ footer a:hover { color: var(--brass); }
     }
     animCursor();
 
-    /* Cursor grows on interactive elements */
     document.querySelectorAll('a, button, .faq-q').forEach(function(el) {
       el.addEventListener('mouseenter', function() {
         cur.style.width = '16px';
